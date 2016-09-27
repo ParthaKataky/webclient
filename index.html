@@ -17,7 +17,7 @@
     <link rel="icon" type="image/png" href="./images/icons/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="./images/icons/favicon-16x16.png" sizes="16x16">
     <link rel="manifest" href="./manifest.json">
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://cors.io/?u=https://beta.atomex.net/webclient/css/styles.css">
       <script src="./js/jquery.js"></script>
   </head>
   <body>
@@ -46,7 +46,7 @@
   <script type="text/javascript">
   //If serviceWorker supports, then register it.
   if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register('https://beta.atomex.net/webclient/serviceWorker.js') //setting scope of sw
+    navigator.serviceWorker.register('https://cors.io/?u=https://beta.atomex.net/webclient/serviceWorker.js') //setting scope of sw
     .then(function (registration) {
       console.log('Service worker is registered!');
     })
@@ -55,7 +55,7 @@
     });
   }
   </script>
-  <script src="https://beta.atomex.net/webclient/js/push.js"></script>
-  <script src="https://beta.atomex.net/webclient/js/app.js"></script>
+  <script src="https://cors.io/?u=https://beta.atomex.net/webclient/js/push.js"></script>
+  <script src="https://cors.io/?u=https://beta.atomex.net/webclient/js/app.js"></script>
   </body>
 </html>
