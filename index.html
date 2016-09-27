@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Progressive Web Application</title>
+    <meta http-equiv=X-UA-Compatible content="IE=edge">
+    <meta name=description content="This web application will work in offline, has a splash screen add to home screen etc,.">
+    <meta name=viewport content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#0288d1">
+    <meta name="msapplication-TileColor" content="#0288d1">
+    <meta name="msapplication-TileImage" content="./images/icons/mstile-150x150.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Progressive Web Application">
+    <meta name="application-name" content="Progressive Web Application">
+    <link rel="apple-touch-icon" href="./images/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="./images/icons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="./images/icons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="./manifest.json">
+    <link rel="stylesheet" href="./css/styles.css">
+      <script src="./js/jquery.js"></script>
+  </head>
+  <body>
+  <div class="app app__layout">
+    
+    <div class="menu">
+      <div class="menu__header"></div>
+      <ul class="menu__list">
+        <li><a target="_blank" rel="noopener" href="https://github.com/gokulkrishh">Author</a></li>
+        <li><a target="_blank" rel="noopener" href="https://github.com/gokulkrishh/demo-progressive-web-app">Source</a></li>
+    </div>
+    <div class="menu__overlay"></div>
+
+    <div class="app__content">
+      <h3>Push Notification: </h3>
+      <p class="custom__button">
+        <input id="turn-on-notification" type="checkbox" hidden="hidden" class="custom__input" data-checked="">
+        <label for="turn-on-notification" class="custom__checkbox"></label>
+        <button class="no--select send-push" disabled>Send Push Notification</button>
+      </p>
+      <div class="card__spinner"></div>
+    </div>
+  </div>
+
+  <!-- JS Files  -->
+  <script type="text/javascript">
+  //If serviceWorker supports, then register it.
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register('https://beta.atomex.net/webclient/serviceWorker.js') //setting scope of sw
+    .then(function (registration) {
+      console.log('Service worker is registered!');
+    })
+    .catch(function (error) {
+      console.log('Service worker failed');
+    });
+  }
+  </script>
+  <script src="https://beta.atomex.net/webclient/js/push.js"></script>
+  <script src="https://beta.atomex.net/webclient/js/app.js"></script>
+  </body>
+</html>
